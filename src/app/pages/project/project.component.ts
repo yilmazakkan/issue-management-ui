@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ProjectService} from '../../servives/shared/project.service';
 
 @Component({
   selector: 'app-project',
@@ -9,9 +10,14 @@ export class ProjectComponent implements OnInit {
 
   projectMessage = 'Project Message ';
 
-  constructor() { }
+  constructor(private projectService : ProjectService) { }
 
   ngOnInit() {
+    this.projectService.getAll().subscribe(
+    (resp) =>{
+      console.log(resp);
+    }
+    );
   }
 
 }

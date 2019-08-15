@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient, HttpParams, } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
-import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
+
 import { catchError } from 'rxjs/operators/catchError';
 import {environment} from "../../environments/environment";
 import 'rxjs-compat/add/observable/of';

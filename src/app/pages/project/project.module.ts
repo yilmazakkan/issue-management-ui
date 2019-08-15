@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ProjectComponent } from './project.component';
 import {ProjectRoutingModule} from './project.routing.module';
 import {ProjectService} from '../../servives/shared/project.service';
+import {TranslateModule} from '@ngx-translate/core';
+import {NgxDatatableModule} from '@swimlane/ngx-datatable';
 
 
 
@@ -10,7 +12,9 @@ import {ProjectService} from '../../servives/shared/project.service';
   declarations: [ProjectComponent],
   imports: [
     CommonModule,
-    ProjectRoutingModule
+    NgxDatatableModule,
+    ProjectRoutingModule,
+    TranslateModule
   ],
   providers:[ProjectService]
 })
