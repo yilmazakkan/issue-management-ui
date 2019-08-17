@@ -14,6 +14,7 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {ApiService} from './servives/api.service';
 import {ProjectService} from './servives/shared/project.service';
 import {IssueService} from './servives/shared/issue.service';
+import {NgxDatatableModule} from '@swimlane/ngx-datatable';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import {IssueService} from './servives/shared/issue.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgxDatatableModule,
     HttpClientModule,
     CollapseModule.forRoot(),
     BsDropdownModule.forRoot(),
