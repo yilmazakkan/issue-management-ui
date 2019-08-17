@@ -15,6 +15,11 @@ import {ApiService} from './servives/api.service';
 import {ProjectService} from './servives/shared/project.service';
 import {IssueService} from './servives/shared/issue.service';
 import {NgxDatatableModule} from '@swimlane/ngx-datatable';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+
+export const createTranslateLoador = (http: HttpClient) => {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+};
 
 @NgModule({
   declarations: [
@@ -43,7 +48,14 @@ import {NgxDatatableModule} from '@swimlane/ngx-datatable';
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory:TranslateLoader,
+        useFactory: TranslateLoader,
+        deps: [HttpClient]
+      }
+    }),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoador,
         deps: [HttpClient]
       }
     })
