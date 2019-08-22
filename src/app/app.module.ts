@@ -16,6 +16,8 @@ import {ProjectService} from './servives/shared/project.service';
 import {IssueService} from './servives/shared/issue.service';
 import {NgxDatatableModule} from '@swimlane/ngx-datatable';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {UserService} from './servives/shared/user.service';
+import {IssueHistoryService} from './servives/shared/issue.history.service';
 
 export const createTranslateLoador = (http: HttpClient) => {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -60,7 +62,7 @@ export const createTranslateLoador = (http: HttpClient) => {
       }
     })
   ],
-  providers: [ApiService, ProjectService, IssueService],
+  providers: [ApiService, ProjectService, IssueService, UserService, IssueHistoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

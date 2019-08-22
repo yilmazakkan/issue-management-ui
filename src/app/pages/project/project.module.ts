@@ -6,6 +6,7 @@ import {ProjectService} from '../../servives/shared/project.service';
 import {TranslateModule} from '@ngx-translate/core';
 import {NgxDatatableModule} from '@swimlane/ngx-datatable';
 import {SharedModule} from '../../shared/shared.module';
+import {FormsModule} from '@angular/forms';
 
 
 
@@ -16,7 +17,8 @@ import {SharedModule} from '../../shared/shared.module';
     NgxDatatableModule,
     ProjectRoutingModule,
     TranslateModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
   providers:[ProjectService]
 })
