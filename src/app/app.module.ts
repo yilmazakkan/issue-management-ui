@@ -19,7 +19,6 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {UserService} from './servives/shared/user.service';
 import {IssueHistoryService} from './servives/shared/issue.history.service';
 import {NotfoundComponent} from './shared/notfound/notfound.component';
-import { IssueDetailComponent } from './pages/issue/issue-detail/issue-detail.component';
 
 export const createTranslateLoador = (http: HttpClient) => {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -32,8 +31,7 @@ export const createTranslateLoador = (http: HttpClient) => {
     HeaderComponent,
     SidebarComponent,
     AppLayoutComponent,
-    NotfoundComponent,
-    IssueDetailComponent
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,

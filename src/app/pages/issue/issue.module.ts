@@ -9,6 +9,7 @@ import { IssueDetailComponent } from './issue-detail/issue-detail.component';
 
 
 
+
 @NgModule({
   declarations: [IssueComponent, IssueDetailComponent],
   imports: [
