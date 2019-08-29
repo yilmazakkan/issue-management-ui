@@ -80,6 +80,7 @@ export class IssueDetailComponent implements OnInit {
   private loadIssueDetails() {
     this.issueService.getByIdWithDetails(this.id).subscribe(response => {
       this.issueDetail = response;
+      this.issueDetailForm = this.createIssueDetailFormGroup(response);
       this.datatable_rows = response['issueHistories'];
     });
   }

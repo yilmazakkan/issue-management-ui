@@ -17,6 +17,7 @@ export class IssueComponent implements OnInit {
 
   ngOnInit() {
     this.setPage({offset: 0});
+
   }
 
   setPage(pageInfo) {
