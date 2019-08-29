@@ -18,6 +18,6 @@ import { IssueDetailComponent } from './issue-detail/issue-detail.component';
     SharedModule,
     NgxDatatableModule
   ],
-  providers:[IssueService]
+  providers:[IssueService,]
 })
 export class IssueModule { }
