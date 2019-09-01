@@ -79,7 +79,6 @@ export class IssueDetailComponent implements OnInit {
 
   private loadIssueDetails() {
     this.issueService.getByIdWithDetails(this.id).subscribe(response => {
-      this.issueDetail = response;
       this.issueDetailForm = this.createIssueDetailFormGroup(response);
       this.datatable_rows = response['issueHistories'];
     });
@@ -105,10 +104,9 @@ export class IssueDetailComponent implements OnInit {
 
   saveIssue() {
     this.issueService.updateIssue(this.issueDetailForm.value).subscribe(response => {
-      console.log(response);
-      this.loadIssueDetails();
+
+      this.issueDetailForm = this.createIssueDetailFormGroup(response);
+      this.datatable_rows = response['issueHistories'];
     });
   }
 }
-
-
