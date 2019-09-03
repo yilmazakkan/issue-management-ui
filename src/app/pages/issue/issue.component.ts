@@ -1,9 +1,10 @@
-import {Component, OnInit, TemplateRef} from '@angular/core';
+import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {IssueService} from '../../servives/shared/issue.service';
 import {Page} from '../../common/page';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 import {ProjectService} from '../../servives/shared/project.service';
+import {ConfirmationComponent} from '../../shared/confirmation/confirmation.component';
 
 
 @Component({
@@ -19,6 +20,9 @@ export class IssueComponent implements OnInit {
 
   modalRef: BsModalRef;
   issueForm: FormGroup;
+
+  // @ts-ignore
+  @ViewChild('tplIssueDeleteCell') tplIssueDeleteCell: TemplateRef<any>;
 
   constructor(private issueService: IssueService,
               private projectService: ProjectService,
@@ -74,5 +78,28 @@ export class IssueComponent implements OnInit {
 
   closeAndResetModal() {
     this.modalRef.hide();
+  }
+  showIssueDeleteConfirmation(value){
+    const modal = this.modalService.show(ConfirmationComponent);
+    (<ConfirmationComponent>modal.content).showConfirmation(
+      'Delete Confirmation ',
+      'Are You sure for delete Issue'
+    );
+    (<ConfirmationComponent>modal.content).onClose.subscribe(result=>{
+        if (result== true){
+          this.issueService.delete(value).subscribe(
+            response => {
+              if (response == true) {
+                this.setPage({offset: 0})
+              }
+
+            });
+
+        }else if (result==false){
+
+        }
+
+      }
+    );
   }
 }

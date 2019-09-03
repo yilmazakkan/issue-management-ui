@@ -27,10 +27,17 @@
         <a [routerLink]="['issue-detail/',value]">Detail</a>
       </ng-template>
     </ngx-datatable-column>
+    <ngx-datatable-column prop="issue.issueId" name="Delete" sortable="false" [cellTemplate]="tplIssueDeleteCell" flexGrow="1" ></ngx-datatable-column>
+
   </ngx-datatable>
+  <ng-template #tplIssueDeleteCell let-row="row" let-value="value">
+    <button (click)="showIssueDeleteConfirmation(value)"><i class="material-icons">delete_forever</i></button>
+
+  </ng-template>
   <div>
     <button type="button" class="btn btn-primary" (click)="openModal(template)">{{'New' | translate}}</button>
   </div>
+
   <ng-template #template>
     <div class="modal-header">
       <h4 class="modal-title pull-left">{{'New Issue' | translate}}</h4>
