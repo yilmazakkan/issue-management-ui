@@ -14,7 +14,7 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 export class IssueDetailComponent implements OnInit {
 
 
-  @ViewChild('tplDateCell', {static: false}) tplDateCell: TemplateRef<any>;
+  @ViewChild('tplDateCell', {static: true}) tplDateCell: TemplateRef<any>;
 
   id: number;
   private sub: any;
@@ -91,16 +91,13 @@ export class IssueDetailComponent implements OnInit {
       details: response['details'],
       date: this.fromJsonDate(response['date']),
       issueStatus: response['issueStatus'],
-      assignee_id: response['assignee']['id'],
-      project_id: response['project']['id'],
-      project_manager: response['project']['manager'] ? response['project']['manager']['nameSurname'] : '',
+      assignee_id: response['assignee']? response['assignee']['id'] : '',
+      project_id: response['project'] ? response['project']['id'] : '',
+      project_manager: response['project'] && response['project']['manager'] ? response['project']['manager']['nameSurname']: '',
     });
   }
 
-  fromJsonDate(jDate): string {
-    const bDate: Date = new Date(jDate);
-    return bDate.toISOString().substring(0, 10);
-  }
+
 
   saveIssue() {
     this.issueService.updateIssue(this.issueDetailForm.value).subscribe(response => {
@@ -108,5 +105,10 @@ export class IssueDetailComponent implements OnInit {
       this.issueDetailForm = this.createIssueDetailFormGroup(response);
       this.datatable_rows = response['issueHistories'];
     });
+  }
+
+  fromJsonDate(jDate): string {
+    const bDate: Date = new Date(jDate);
+    return bDate.toISOString().substring(0, 10);
   }
 }
