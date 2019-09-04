@@ -4,7 +4,6 @@ import {Page} from '../../common/page';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ConfirmationComponent} from '../../shared/confirmation/confirmation.component';
-import {templateJitUrl} from '@angular/compiler';
 import {UserService} from '../../servives/shared/user.service';
 
 @Component({

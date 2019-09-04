@@ -27,7 +27,7 @@
         <a [routerLink]="['issue-detail/',value]">Detail</a>
       </ng-template>
     </ngx-datatable-column>
-    <ngx-datatable-column prop="issue.issueId" name="Delete" sortable="false" [cellTemplate]="tplIssueDeleteCell" flexGrow="1" ></ngx-datatable-column>
+    <ngx-datatable-column prop="id" name="Delete" sortable="false" [cellTemplate]="tplIssueDeleteCell" flexGrow="1" ></ngx-datatable-column>
 
   </ngx-datatable>
   <ng-template #tplIssueDeleteCell let-row="row" let-value="value">
