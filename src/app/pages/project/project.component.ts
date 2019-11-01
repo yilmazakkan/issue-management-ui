@@ -1,10 +1,10 @@
 import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
-import {ProjectService} from '../../servives/shared/project.service';
+import {ProjectService} from '../../services/shared/project.service';
 import {Page} from '../../common/page';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ConfirmationComponent} from '../../shared/confirmation/confirmation.component';
-import {UserService} from '../../servives/shared/user.service';
+import {UserService} from '../../services/shared/user.service';
 
 @Component({
   selector: 'app-project',

@@ -11,13 +11,13 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {BsDatepickerModule, BsDropdownModule, CollapseModule, ModalModule, PaginationModule} from 'ngx-bootstrap';
 import {ToastNoAnimation, ToastNoAnimationModule, ToastrModule} from 'ngx-toastr';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
-import {ApiService} from './servives/api.service';
-import {ProjectService} from './servives/shared/project.service';
-import {IssueService} from './servives/shared/issue.service';
+import {ApiService} from './services/api.service';
+import {ProjectService} from './services/shared/project.service';
+import {IssueService} from './services/shared/issue.service';
 import {NgxDatatableModule} from '@swimlane/ngx-datatable';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {UserService} from './servives/shared/user.service';
-import {IssueHistoryService} from './servives/shared/issue.history.service';
+import {UserService} from './services/shared/user.service';
+import {IssueHistoryService} from './services/shared/issue.history.service';
 import {NotfoundComponent} from './shared/notfound/notfound.component';
 
 export const createTranslateLoador = (http: HttpClient) => {

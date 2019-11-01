@@ -1,8 +1,8 @@
 import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {IssueService} from '../../../servives/shared/issue.service';
-import {ProjectService} from '../../../servives/shared/project.service';
-import {UserService} from '../../../servives/shared/user.service';
+import {IssueService} from '../../../services/shared/issue.service';
+import {ProjectService} from '../../../services/shared/project.service';
+import {UserService} from '../../../services/shared/user.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
 
 

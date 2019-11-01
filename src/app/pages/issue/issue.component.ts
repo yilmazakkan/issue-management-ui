@@ -1,9 +1,9 @@
 import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
-import {IssueService} from '../../servives/shared/issue.service';
+import {IssueService} from '../../services/shared/issue.service';
 import {Page} from '../../common/page';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap';
-import {ProjectService} from '../../servives/shared/project.service';
+import {ProjectService} from '../../services/shared/project.service';
 import {ConfirmationComponent} from '../../shared/confirmation/confirmation.component';
 
 
