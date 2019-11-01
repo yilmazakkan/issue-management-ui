@@ -25,6 +25,7 @@ import {AuthenticationService} from './security/authentication.service';
 import {JwtInterceptor} from './security/jwt.interceptor';
 import {ErrorInterceptor} from './security/authentication.interceptor';
 import {LoginComponent} from './login/login.component';
+import {RegisterComponent} from './register/register.component';
 
 export const createTranslateLoador = (http: HttpClient) => {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -38,7 +39,8 @@ export const createTranslateLoador = (http: HttpClient) => {
     SidebarComponent,
     AppLayoutComponent,
     NotfoundComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
 
   ],
   imports: [

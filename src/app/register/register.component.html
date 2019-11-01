@@ -1,0 +1,46 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <a href="https://icon-library.net/icon/customer-login-icon-27.html" title="Customer Login Icon #180002"><img src="https://icon-library.net//images/customer-login-icon/customer-login-icon-27.jpg" width="150" /></a>
+    </div>
+
+    <!-- Login Form -->
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+      <input type="text" formControlName="username" id="username" class="fadeIn second" name="username" placeholder="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+      <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+        <div *ngIf="f.username.errors.required">Username is required</div>
+      </div>
+      <input type="text" formControlName="password" id="password" class="fadeIn third" name="login" placeholder="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">Password is required</div>
+      </div>
+      <input type="text" formControlName="nameSurname" id="nameSurname" class="fadeIn third" name="nameSurname" placeholder="nameSurname" [ngClass]="{ 'is-invalid': submitted && f.nameSurname.errors }">
+      <div *ngIf="submitted && f.nameSurname.errors" class="invalid-feedback">
+        <div *ngIf="f.nameSurname.errors.required">nameSurname is required</div>
+      </div>
+      <input type="text" formControlName="email" id="email" class="fadeIn third" name="email" placeholder="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+        <div *ngIf="f.email.errors.required">Password is required</div>
+      </div>
+      <input type="submit" [disabled]="loading" class="fadeIn fourth" value="Register">
+      <input type="submit" [routerLink]="['/login']" class="fadeIn fourth" value="Login">
+
+      <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+
+
+  </div>
+</div>

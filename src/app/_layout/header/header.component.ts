@@ -1,5 +1,5 @@
-import {Component, OnInit} from "@angular/core";
-import {NavigationEnd, Router} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {NavigationEnd, Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +8,7 @@ import {NavigationEnd, Router} from "@angular/router";
 })
 export class HeaderComponent implements OnInit {
   pushRightClass: string = 'push-right';
-  collapseClass:string = 'collapsed';
+  collapseClass: string = 'collapsed';
   isCollapsed = false;
 
   constructor(public router: Router) {
@@ -28,13 +28,13 @@ export class HeaderComponent implements OnInit {
 
   isToggled(): boolean {
     const dom: Element = document.querySelector('aside');
-    return (dom)?dom.classList.contains(this.collapseClass):false;
+    return (dom) ? dom.classList.contains(this.collapseClass) : false;
   }
 
   toggleSidebar() {
     const dom: any = document.querySelector('aside');
-    (dom)?dom.classList.toggle(this.collapseClass):'';
+    (dom) ? dom.classList.toggle(this.collapseClass) : '';
     const cdom: any = document.querySelector('#main-container');
-    (cdom)?cdom.classList.toggle(this.collapseClass):'';
+    (cdom) ? cdom.classList.toggle(this.collapseClass) : '';
   }
 }

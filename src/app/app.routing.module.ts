@@ -4,6 +4,7 @@ import {AppLayoutComponent} from './_layout';
 import {NotfoundComponent} from './shared/notfound/notfound.component';
 import {AuthGuard} from './security/auth.guard';
 import {LoginComponent} from './login/login.component';
+import {RegisterComponent} from './register/register.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
     ]
   },
   {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
   {path: '**', component: NotfoundComponent}
 ];
 
