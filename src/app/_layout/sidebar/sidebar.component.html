@@ -1,4 +1,4 @@
-<aside class="sidebar" [ngClass]="{collapseClass: isActive}">
+<aside class="sidebar" [ngClass]="{collapseClass: isActive}" xmlns="http://www.w3.org/1999/html">
   <nav class="navbar navbar-dark bg-primary">
     <a class="navbar-brand m-0 py-2 brand-title" href="#">IssueManagement</a>
     <span></span>
@@ -6,9 +6,13 @@
   </nav>
 
   <nav class="navigation">
+
+    <div id="user">
+    Welcome {{activeUser.username}}
+  </div>
     <ul>
       <li class="active">
-        <a routerLink="/dashboard"  routerLinkActive="active" >
+        <a routerLink="/dashboard" routerLinkActive="active">
           <span class="nav-icon material-icons">public</span>
           Dashboard
         </a>
@@ -16,11 +20,11 @@
 
       <li [ngClass]="{'open': showMenu === 'project'}">
         <a (click)="addExpandClass('project')" title="Project">
-          <span class="nav-icon material-icons">supervisor_account</span> Project
+          <span class="nav-icon material-icons">add_to_queue</span> Project
           <span class="toogle-sub-nav material-icons">keyboard_arrow_right</span></a>
         <ul class="sub-nav" [ngStyle]="{'display':(showMenu === 'project')?'block':'none'}">
           <li>
-            <a routerLink="/project"routerLinkActive="active">
+            <a routerLink="/project" routerLinkActive="active">
               <span><span class="nav-icon material-icons">list</span> &nbsp;&nbsp;&nbsp;Project List</span>
             </a>
           </li>
@@ -29,12 +33,25 @@
 
       <li [ngClass]="{'open': showMenu === 'issue'}">
         <a (click)="addExpandClass('issue')" title="Issue">
-          <span class="nav-icon material-icons">supervisor_account</span> Issue
+          <span class="nav-icon material-icons">insert_chart</span> Issue
           <span class="toogle-sub-nav material-icons">keyboard_arrow_right</span></a>
         <ul class="sub-nav" [ngStyle]="{'display':(showMenu === 'issue')?'block':'none'}">
           <li>
-            <a routerLink="/issue"routerLinkActive="active">
+            <a routerLink="/issue" routerLinkActive="active">
               <span><span class="nav-icon material-icons">list</span> &nbsp;&nbsp;&nbsp;Issue List</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li [ngClass]="{'open': showMenu === 'user'}">
+        <a (click)="addExpandClass('user')" title="User">
+          <span class="nav-icon material-icons">supervisor_account</span> User
+          <span class="toogle-sub-nav material-icons">keyboard_arrow_right</span></a>
+        <ul class="sub-nav" [ngStyle]="{'display':(showMenu === 'user')?'block':'none'}">
+          <li>
+            <a routerLink="/user" routerLinkActive="active">
+              <span><span class="nav-icon material-icons">list</span> &nbsp;&nbsp;&nbsp;User List</span>
             </a>
           </li>
         </ul>

@@ -135,6 +135,18 @@ $theme-primary-color:#4B89FC;
         }
       }
     }
+    #user{
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      display:inline-block;
+      margin: 10px 10px 10px 50px;
+      color: #cccccc;
+    }
+
+
+
     &.sidebar-light {
       background-color: #fff;
       .navigation {

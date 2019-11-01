@@ -1,16 +1,29 @@
-import {Component} from "@angular/core";
-import {NavigationEnd, Router} from "@angular/router";
+import {Component, NgModule} from '@angular/core';
+import {NavigationEnd, Router} from '@angular/router';
+import {IssueComponent} from '../../pages/issue/issue.component';
+import {IssueDetailComponent} from '../../pages/issue/issue-detail/issue-detail.component';
+import {CommonModule} from '@angular/common';
+import {IssueRoutingModule} from '../../pages/issue/issue.routing.module';
+import {SharedModule} from '../../shared/shared.module';
+import {NgxDatatableModule} from '@swimlane/ngx-datatable';
+import {TranslateModule} from '@ngx-translate/core';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss']
 })
+
+
+
+
 export class SidebarComponent {
   isActive: boolean = false;
   showMenu: string = '';
   pushRightClass: string = 'push-right';
-  collapseClass:string = 'collapsed';
+  collapseClass: string = 'collapsed';
+  activeUser: '';
 
   constructor(public router: Router) {
     this.router.events.subscribe(val => {
@@ -22,11 +35,15 @@ export class SidebarComponent {
         this.toggleSidebar();
       }
     });
-    this.showMenu='dashboard';
+    this.showMenu = 'dashboard';
   }
 
   eventCalled() {
     this.isActive = !this.isActive;
+  }
+
+  ngOnInit() {
+    this.activeUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 
   addExpandClass(element: any) {
@@ -39,14 +56,14 @@ export class SidebarComponent {
 
   isToggled(): boolean {
     const dom: Element = document.querySelector('aside');
-    return (dom)?dom.classList.contains(this.collapseClass):false;
+    return (dom) ? dom.classList.contains(this.collapseClass) : false;
   }
 
   toggleSidebar() {
     const dom: any = document.querySelector('aside');
-    (dom)?dom.classList.toggle(this.collapseClass):'';
+    (dom) ? dom.classList.toggle(this.collapseClass) : '';
     const cdom: any = document.querySelector('#main-container');
-    (cdom)?cdom.classList.toggle(this.collapseClass):'';
+    (cdom) ? cdom.classList.toggle(this.collapseClass) : '';
   }
 
 }

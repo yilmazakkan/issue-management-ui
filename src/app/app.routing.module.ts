@@ -14,7 +14,8 @@ const routes: Routes = [
       {path: '', pathMatch: 'full', redirectTo: 'dashboard'},
       {path: 'dashboard', loadChildren: './pages/dashboard/dashboard.module#DashboardModule'},
       {path: 'issue', loadChildren: './pages/issue/issue.module#IssueModule'},
-      {path: 'project', loadChildren: './pages/project/project.module#ProjectModule'}
+      {path: 'project', loadChildren: './pages/project/project.module#ProjectModule'},
+      {path: 'user', loadChildren: './pages/user/user.module#UserModule'}
     ]
   },
   {path: 'login', component: LoginComponent},
