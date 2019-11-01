@@ -10,6 +10,7 @@ export class HeaderComponent implements OnInit {
   pushRightClass: string = 'push-right';
   collapseClass: string = 'collapsed';
   isCollapsed = false;
+  activeUser: '';
 
   constructor(public router: Router) {
     this.router.events.subscribe(val => {
@@ -24,6 +25,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.activeUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 
   isToggled(): boolean {
