@@ -9,7 +9,7 @@ export class AuthenticationService {
   }
 
   login(username: string, password: string) {
-    return this.http.post<any>( environment.API_BASE_PATH + '/token', {username, password})
+    return this.http.post<any>(environment.API_BASE_PATH + '/token', {username, password})
       .pipe(map(user => {
         if (user && user.token) {
           localStorage.setItem('currentUser', JSON.stringify(user));
@@ -19,7 +19,7 @@ export class AuthenticationService {
   }
 
   register(registerData) {
-    return this.http.post<any>( environment.API_BASE_PATH + '/token/register', registerData)
+    return this.http.post<any>(environment.API_BASE_PATH + '/token/register', registerData)
       .pipe(map(resp => {
         return resp;
       }));

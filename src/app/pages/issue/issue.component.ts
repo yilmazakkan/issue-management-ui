@@ -79,23 +79,24 @@ export class IssueComponent implements OnInit {
   closeAndResetModal() {
     this.modalRef.hide();
   }
-  showIssueDeleteConfirmation(value){
+
+  showIssueDeleteConfirmation(value) {
     const modal = this.modalService.show(ConfirmationComponent);
-    (<ConfirmationComponent>modal.content).showConfirmation(
+    (<ConfirmationComponent> modal.content).showConfirmation(
       'Delete Confirmation ',
       'Are You sure for delete Issue'
     );
-    (<ConfirmationComponent>modal.content).onClose.subscribe(result=>{
-        if (result== true){
+    (<ConfirmationComponent> modal.content).onClose.subscribe(result => {
+        if (result == true) {
           this.issueService.delete(value).subscribe(
             response => {
               if (response == true) {
-                this.setPage({offset: 0})
+                this.setPage({offset: 0});
               }
 
             });
 
-        }else if (result==false){
+        } else if (result == false) {
 
         }
 

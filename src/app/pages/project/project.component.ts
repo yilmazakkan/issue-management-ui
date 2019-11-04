@@ -2,7 +2,7 @@ import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {ProjectService} from '../../services/shared/project.service';
 import {Page} from '../../common/page';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ConfirmationComponent} from '../../shared/confirmation/confirmation.component';
 import {UserService} from '../../services/shared/user.service';
 
@@ -22,7 +22,6 @@ export class ProjectComponent implements OnInit {
   rows = [];
   cols = [];
   managerOptions = [];
-
 
 
   constructor(private projectService: ProjectService,
@@ -55,29 +54,33 @@ export class ProjectComponent implements OnInit {
     });
 
 
-
   }
-  get f() { return this.projectForm.controls }
+
+  get f() {
+    return this.projectForm.controls;
+  }
 
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
   }
+
   saveProject() {
 
-    if(!this.projectForm.valid)
+    if (!this.projectForm.valid) {
       return;
+    }
 
     this.projectService.createProject(this.projectForm.value).subscribe(
       response => {
 
-        this.setPage({ offset: 0 });
+        this.setPage({offset: 0});
         this.closeAndResetModal();
       }
-    )
+    );
 
   }
 
-  closeAndResetModal(){
+  closeAndResetModal() {
     this.projectForm.reset();
     this.modalRef.hide();
   }
@@ -92,27 +95,27 @@ export class ProjectComponent implements OnInit {
     });
   }
 
-  showProjectDeleteConfirmation(value){
+  showProjectDeleteConfirmation(value) {
     const modal = this.modalService.show(ConfirmationComponent);
-    (<ConfirmationComponent>modal.content).showConfirmation(
-    'Delete Confirmation ',
-    'Are You sure for delete Project'
+    (<ConfirmationComponent> modal.content).showConfirmation(
+      'Delete Confirmation ',
+      'Are You sure for delete Project'
     );
-    (<ConfirmationComponent>modal.content).onClose.subscribe(result=>{
-      if (result== true){
-        this.projectService.delete(value).subscribe(
-          response => {
-            if (response == true) {
-              this.setPage({offset: 0})
-            }
+    (<ConfirmationComponent> modal.content).onClose.subscribe(result => {
+        if (result == true) {
+          this.projectService.delete(value).subscribe(
+            response => {
+              if (response == true) {
+                this.setPage({offset: 0});
+              }
 
-          });
+            });
 
-      }else if (result==false){
+        } else if (result == false) {
+
+        }
 
       }
-
-    }
     );
   }
 

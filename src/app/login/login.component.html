@@ -9,16 +9,19 @@
 
     <!-- Icon -->
     <div class="fadeIn first">
-      <a href="https://icon-library.net/icon/customer-login-icon-27.html" title="Customer Login Icon #180002"><img src="https://icon-library.net//images/customer-login-icon/customer-login-icon-27.jpg" width="150" /></a>
+      <a href="https://icon-library.net/icon/customer-login-icon-27.html" title="Customer Login Icon #180002"><img
+        src="https://icon-library.net//images/customer-login-icon/customer-login-icon-27.jpg" width="150"/></a>
     </div>
 
     <!-- Login Form -->
     <form [formGroup]="loginForm" (ngSubmit)="login()">
-      <input type="text" formControlName="username" id="username" class="fadeIn second" name="username" placeholder="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+      <input type="text" formControlName="username" id="username" class="fadeIn second" name="username"
+             placeholder="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
       <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
         <div *ngIf="f.username.errors.required">Username is required</div>
       </div>
-      <input type="text" formControlName="password" id="password" class="fadeIn third" name="login" placeholder="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+      <input type="text" formControlName="password" id="password" class="fadeIn third" name="login"
+             placeholder="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
       <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
         <div *ngIf="f.password.errors.required">Password is required</div>
       </div>

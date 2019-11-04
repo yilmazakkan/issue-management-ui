@@ -1,24 +1,24 @@
-import {Injectable} from "@angular/core";
-import {ApiService} from "../api.service";
-import {Observable} from "rxjs/Rx";
-import {map} from "rxjs/internal/operators";
+import {Injectable} from '@angular/core';
+import {ApiService} from '../api.service';
+import {Observable} from 'rxjs/Rx';
+import {map} from 'rxjs/internal/operators';
 
 @Injectable({
   providedIn: 'root'
 })
-export class IssueHistoryService{
+export class IssueHistoryService {
 
-  private ISSUE_HISTORY_PATH = "/issue/history";
+  private ISSUE_HISTORY_PATH = '/issue/history';
 
-  constructor(private apiService: ApiService ){
+  constructor(private apiService: ApiService) {
   }
 
-  getAll() : Observable<any>{
+  getAll(): Observable<any> {
     return this.apiService.get(this.ISSUE_HISTORY_PATH).pipe(map(
-      res =>{
-        if(res){
+      res => {
+        if (res) {
           return res;
-        }else{
+        } else {
           console.log(res);
           return {};
         }
@@ -26,12 +26,12 @@ export class IssueHistoryService{
     ));
   }
 
-  getById(id) : Observable<any>{
-    return this.apiService.get(this.ISSUE_HISTORY_PATH,id).pipe(map(
-      res =>{
-        if(res){
+  getById(id): Observable<any> {
+    return this.apiService.get(this.ISSUE_HISTORY_PATH, id).pipe(map(
+      res => {
+        if (res) {
           return res;
-        }else{
+        } else {
           console.log(res);
           return {};
         }
@@ -39,12 +39,12 @@ export class IssueHistoryService{
     ));
   }
 
-  createIssue(user) : Observable<any>{
-    return this.apiService.post(this.ISSUE_HISTORY_PATH,user).pipe(map(
-      res =>{
-        if(res){
+  createIssue(user): Observable<any> {
+    return this.apiService.post(this.ISSUE_HISTORY_PATH, user).pipe(map(
+      res => {
+        if (res) {
           return res;
-        }else{
+        } else {
           console.log(res);
           return {};
         }
@@ -52,12 +52,12 @@ export class IssueHistoryService{
     ));
   }
 
-  delete(id) : Observable<any>{
-    return this.apiService.delete(this.ISSUE_HISTORY_PATH,id).pipe(map(
-      res =>{
-        if(res){
+  delete(id): Observable<any> {
+    return this.apiService.delete(this.ISSUE_HISTORY_PATH, id).pipe(map(
+      res => {
+        if (res) {
           return res;
-        }else{
+        } else {
           console.log(res);
           return {};
         }

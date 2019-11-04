@@ -1,9 +1,9 @@
-<form (ngSubmit)= "onConfirm()" *ngIf="active">
+<form (ngSubmit)="onConfirm()" *ngIf="active">
   <div class="modal-header">
     <h4 class="modal-title pull-right">  {{header}} </h4>
-    </div>
+  </div>
   <div class="modal-body">
-  {{body}}
+    {{body}}
   </div>
 
   <div class="modal-footer">

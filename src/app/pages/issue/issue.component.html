@@ -15,19 +15,21 @@
     [limit]="page.size"
     (page)='setPage($event)'>
 
-  <ngx-datatable-column prop="id" name="No" sortable="false"></ngx-datatable-column>
-  <ngx-datatable-column prop="description" name="Description" sortable="false"></ngx-datatable-column>
-  <ngx-datatable-column prop="date" name="Issue Date" sortable="false"></ngx-datatable-column>
-  <ngx-datatable-column prop="issueStatus" name="Status" sortable="false"></ngx-datatable-column>
-  <ngx-datatable-column prop="assignee.nameSurname" name="Assignee" sortable="false"></ngx-datatable-column>
-  <ngx-datatable-column prop="project.projectName" name="Project Name" sortable="false"></ngx-datatable-column>
-    <ngx-datatable-column prop="project.manager.nameSurname" name="Project Manager" sortable="false"></ngx-datatable-column>
+    <ngx-datatable-column prop="id" name="No" sortable="false"></ngx-datatable-column>
+    <ngx-datatable-column prop="description" name="Description" sortable="false"></ngx-datatable-column>
+    <ngx-datatable-column prop="date" name="Issue Date" sortable="false"></ngx-datatable-column>
+    <ngx-datatable-column prop="issueStatus" name="Status" sortable="false"></ngx-datatable-column>
+    <ngx-datatable-column prop="assignee.nameSurname" name="Assignee" sortable="false"></ngx-datatable-column>
+    <ngx-datatable-column prop="project.projectName" name="Project Name" sortable="false"></ngx-datatable-column>
+    <ngx-datatable-column prop="project.manager.nameSurname" name="Project Manager"
+                          sortable="false"></ngx-datatable-column>
     <ngx-datatable-column prop="id" name="Actions" sortable="false">
       <ng-template let-value="value" ngx-datatable-cell-template>
         <a [routerLink]="['issue-detail/',value]">Detail</a>
       </ng-template>
     </ngx-datatable-column>
-    <ngx-datatable-column prop="id" name="Delete" sortable="false" [cellTemplate]="tplIssueDeleteCell" flexGrow="1" ></ngx-datatable-column>
+    <ngx-datatable-column prop="id" name="Delete" sortable="false" [cellTemplate]="tplIssueDeleteCell"
+                          flexGrow="1"></ngx-datatable-column>
 
   </ngx-datatable>
   <ng-template #tplIssueDeleteCell let-row="row" let-value="value">
@@ -52,7 +54,8 @@
         <div class="form-group">
           <label>{{'Issue Description'| translate}}</label>
 
-          <input type="text" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': f.description.errors }" />
+          <input type="text" formControlName="description" class="form-control"
+                 [ngClass]="{ 'is-invalid': f.description.errors }"/>
           <div *ngIf="f.description.errors" class="invalid-feedback">
             <div *ngIf="f.description.errors.required">{{'Description is required'| translate}}</div>
           </div>
@@ -61,7 +64,7 @@
         <div class="form-group">
           <label>{{'Project '| translate}}</label>
 
-          <select formControlName="projectId" class="form-control" [ngClass]="{ 'is-invalid': f.projectId.errors }" >
+          <select formControlName="projectId" class="form-control" [ngClass]="{ 'is-invalid': f.projectId.errors }">
             <option *ngFor="let val of projectOptions" [value]="val.id">{{val.projectName}}</option>
           </select>
           <div *ngIf="f.projectId.errors" class="invalid-feedback">
@@ -69,9 +72,9 @@
           </div>
         </div>
 
-        <div class="modal-footer" >
+        <div class="modal-footer">
           <button class="btn btn-light" (click)="closeAndResetModal()">{{ 'Close' | translate }}</button>
-          <button class="btn btn-primary" >{{ 'Save' | translate }}</button>
+          <button class="btn btn-primary">{{ 'Save' | translate }}</button>
         </div>
       </form>
 

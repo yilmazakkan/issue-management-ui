@@ -1,5 +1,5 @@
-$sidebar-bg-color:#343a40;
-$theme-primary-color:#4B89FC;
+$sidebar-bg-color: #343a40;
+$theme-primary-color: #4B89FC;
 :host {
   .sidebar {
     position: fixed;
@@ -10,25 +10,31 @@ $theme-primary-color:#4B89FC;
     z-index: 1022;
     white-space: nowrap;
     transition: all 0.5s;
+
     .navbar {
       flex-wrap: unset;
       white-space: nowrap;
+
       .brand-title {
         opacity: 1;
         transition: all 0.5s;
-        +span {
+
+        + span {
           flex: auto;
         }
       }
+
       .toggle-sidebar {
         margin-right: 0px;
         transition: margin 0.5s;
       }
     }
+
     .navigation {
       padding: 24px 0px;
       overflow: auto;
       height: calc(100vh - 62px);
+
       label {
         font-size: 11px;
         font-weight: 200;
@@ -39,13 +45,16 @@ $theme-primary-color:#4B89FC;
         display: block;
         overflow: hidden;
       }
+
       ul {
         margin: 0px;
         padding: 0px;
+
         li {
           list-style: none;
           position: relative;
           transition: all 0.5s;
+
           a {
             display: block;
             padding: 0rem 1.2rem;
@@ -56,6 +65,7 @@ $theme-primary-color:#4B89FC;
             overflow: hidden;
             transition: all 0.5s;
             position: relative;
+
             .nav-icon {
               display: inline-block;
               margin-right: 8px;
@@ -65,6 +75,7 @@ $theme-primary-color:#4B89FC;
               top: -2px;
               transition: margin 0.5s;
             }
+
             .toogle-sub-nav {
               position: absolute;
               right: 12px;
@@ -76,16 +87,19 @@ $theme-primary-color:#4B89FC;
               opacity: 1;
               transition: all 0.5s;
             }
+
             &.active {
               color: #fff;
               box-shadow: inset 3px 0px 0px $theme-primary-color;
               background-color: rgba(0, 0, 0, 0.15);
             }
           }
-          &:hover>a {
+
+          &:hover > a {
             color: #fff;
           }
-          &.notification>a:before {
+
+          &.notification > a:before {
             content: '';
             position: absolute;
             display: inline-block;
@@ -97,35 +111,43 @@ $theme-primary-color:#4B89FC;
             border-radius: 12px;
             z-index: 1;
           }
+
           &.open {
             background-color: rgba(0, 0, 0, 0.15);
-            >a {
+
+            > a {
               color: #fff;
+
               .toogle-sub-nav {
                 transform: rotate(90deg);
               }
             }
-            &.active>a {
+
+            &.active > a {
               background-color: transparent;
             }
-            >.sub-nav {
+
+            > .sub-nav {
               display: block;
               top: 140px;
               left: 64px;
             }
           }
+
           .sub-nav {
             display: none;
             padding: 12px 0px;
             padding-top: 0px;
             top: 140px;
             left: 64px;
+
             li {
               a {
                 line-height: 32px;
-                padding-left: calc( 32px + 1.2rem);
+                padding-left: calc(32px + 1.2rem);
                 font-size: 13px;
               }
+
               &.active a {
                 background-color: transparent;
                 box-shadow: none;
@@ -135,48 +157,56 @@ $theme-primary-color:#4B89FC;
         }
       }
     }
-    #user{
+
+    #user {
       text-align: center;
       font-size: 13px;
       font-weight: 600;
       text-transform: uppercase;
-      display:inline-block;
+      display: inline-block;
       margin: 10px 10px 10px 50px;
       color: #cccccc;
     }
 
 
-
     &.sidebar-light {
       background-color: #fff;
+
       .navigation {
         label {
           color: rgba(0, 0, 0, 0.4);
           font-weight: 400;
         }
+
         ul li {
           a {
             color: rgba(0, 0, 0, 0.5);
             font-weight: 400;
+
             &:hover {
               color: rgba(0, 0, 0, 0.75);
             }
           }
-          &.active>a {
+
+          &.active > a {
             color: rgba(0, 0, 0, 0.75);
             background-color: rgba(0, 0, 0, 0.075);
           }
+
           &.open {
             background-color: rgba(0, 0, 0, 0.075);
-            >a {
+
+            > a {
               color: rgba(0, 0, 0, 0.75);
             }
-            &.active>a {
+
+            &.active > a {
               background-color: transparent;
             }
           }
         }
       }
+
       &.collapsed .navigation ul li .sub-nav {
         background-color: #fff;
         top: 140px;
@@ -246,8 +276,10 @@ $theme-primary-color:#4B89FC;
   :host {
     .sidebar.collapsed {
       width: 70px;
+
       .navbar {
         place-content: flex-end;
+
         .brand-title {
           text-indent: -9em;
           opacity: 0;
@@ -270,30 +302,39 @@ $theme-primary-color:#4B89FC;
       .navbar .toggle-sidebar {
         margin-right: 8px;
       }
+
       .navigation {
         overflow-x: hidden;
         overflow-y: auto;
+
         label {
           text-align: center;
+
           span {
             display: none;
           }
+
           &:before {
             content: '...';
           }
         }
+
         ul li {
           position: static;
+
           a {
             padding: 0rem 1.4rem;
+
             .nav-icon {
               font-size: 22px;
               margin-right: 22px;
             }
+
             .toogle-sub-nav {
               opacity: 0;
             }
           }
+
           .sub-nav {
             display: none !important;
             position: absolute;
@@ -303,10 +344,12 @@ $theme-primary-color:#4B89FC;
             padding: 12px 0px;
             background-color: $sidebar-bg-color;
             box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.3);
+
             a {
               padding-left: 1.2rem;
             }
           }
+
           &:hover .sub-nav {
             display: block !important;
             top: 140px;
@@ -321,6 +364,7 @@ $theme-primary-color:#4B89FC;
 @media only screen and (max-width: 768px) {
   .sidebar {
     left: -224px;
+
     &.collapsed {
       width: 220px;
       left: 0px;

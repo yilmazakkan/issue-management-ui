@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {BsModalRef} from 'ngx-bootstrap';
 import {Subject} from 'rxjs';
 
@@ -14,27 +14,29 @@ export class ConfirmationComponent implements OnInit {
   public onClose: Subject<boolean>;
   private active: boolean;
 
-  constructor(private bsModelRef: BsModalRef) { }
+  constructor(private bsModelRef: BsModalRef) {
+  }
 
   ngOnInit() {
     this.onClose = new Subject();
   }
 
-  public  showConfirmation(header:string,body: string,):void{
+  public showConfirmation(header: string, body: string,): void {
     this.body = body;
     this.header = header;
     this.active = true;
 
   }
 
-  onConfirm(){
-    this.active=false;
+  onConfirm() {
+    this.active = false;
     this.onClose.next(true);
     this.bsModelRef.hide();
 
   }
-  onCancel(){
-    this.active=false;
+
+  onCancel() {
+    this.active = false;
     this.onClose.next(false);
     this.bsModelRef.hide();
   }

@@ -1,21 +1,11 @@
-import {Component, NgModule} from '@angular/core';
+import {Component} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
-import {IssueComponent} from '../../pages/issue/issue.component';
-import {IssueDetailComponent} from '../../pages/issue/issue-detail/issue-detail.component';
-import {CommonModule} from '@angular/common';
-import {IssueRoutingModule} from '../../pages/issue/issue.routing.module';
-import {SharedModule} from '../../shared/shared.module';
-import {NgxDatatableModule} from '@swimlane/ngx-datatable';
-import {TranslateModule} from '@ngx-translate/core';
-import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss']
 })
-
-
 
 
 export class SidebarComponent {

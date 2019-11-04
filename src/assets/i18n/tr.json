@@ -1,6 +1,6 @@
 {
-  "Dashboard" : "Anasayfa",
-  "Project List" : "Proje Listesi",
+  "Dashboard": "Anasayfa",
+  "Project List": "Proje Listesi",
   "Project Code is required": "Proje Kodu gerekli",
   "Project Name should be (min) 4 char": "Proje Adı (en az) 4 karakter olmalıdır",
   "Project Name is required": "Proje Adı gerekli",
