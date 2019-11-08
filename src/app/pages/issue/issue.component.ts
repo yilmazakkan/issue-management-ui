@@ -77,6 +77,7 @@ export class IssueComponent implements OnInit {
   }
 
   closeAndResetModal() {
+    this.issueForm.reset();
     this.modalRef.hide();
   }
 

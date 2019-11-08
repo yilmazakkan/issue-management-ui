@@ -20,7 +20,7 @@
       <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
         <div *ngIf="f.username.errors.required">Username is required</div>
       </div>
-      <input type="text" formControlName="password" id="password" class="fadeIn third" name="login"
+      <input type="password" formControlName="password" id="password" class="fadeIn third" name="login"
              placeholder="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
       <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
         <div *ngIf="f.password.errors.required">Password is required</div>

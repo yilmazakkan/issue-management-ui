@@ -6,7 +6,7 @@ import {map} from 'rxjs/internal/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class  UserService {
 
   private USER_PATH = '/user';
 
