@@ -18,12 +18,10 @@ export class UserComponent implements OnInit {
   rows = [];
   cols = [
     {prop: 'id', name: 'No'},
-    {prop: 'username', name: 'User Surname', sortable: false},
-    {prop: 'nameSurname', name: 'Name Surname', sortable: false},
+    {prop: 'nameSurname', name: 'Ad Soyad', sortable:false},
     {prop: 'email', name: 'email', sortable: false}
   ];
   managerOptions = [];
-
 
   constructor(private userService: UserService) {
   }

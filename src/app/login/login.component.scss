@@ -15,6 +15,7 @@ a {
   font-weight: 400;
 }
 
+
 h2 {
   text-align: center;
   font-size: 16px;
@@ -131,7 +132,6 @@ input[type=text] {
   border-radius: 5px 5px 5px 5px;
 }
 
-
 input[type=text]:focus {
   background-color: #fff;
   border-bottom: 2px solid #5fbae9;
@@ -140,6 +140,7 @@ input[type=text]:focus {
 input[type=text]:placeholder {
   color: #cccccc;
 }
+
 input[type=password] {
   background-color: #f6f6f6;
   border: none;
@@ -160,6 +161,7 @@ input[type=password] {
   -webkit-border-radius: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px;
 }
+
 input[type=password]:focus {
   background-color: #fff;
   border-bottom: 2px solid #5fbae9;
@@ -168,7 +170,6 @@ input[type=password]:focus {
 input[type=password]:placeholder {
   color: #cccccc;
 }
-
 /* ANIMATIONS */
 
 /* Simple CSS3 Fade-in-down Animation */

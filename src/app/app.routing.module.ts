@@ -15,8 +15,7 @@ const routes: Routes = [
       {path: 'dashboard', loadChildren: './pages/dashboard/dashboard.module#DashboardModule'},
       {path: 'issue', loadChildren: './pages/issue/issue.module#IssueModule'},
       {path: 'project', loadChildren: './pages/project/project.module#ProjectModule'},
-      {path: 'user', loadChildren: './pages/user/user.module#UserModule'},
-      {path: 'account', loadChildren: './pages/account/account.module#AccountModule'}
+      {path: 'user', loadChildren: './pages/user/user.module#UserModule'}
     ]
   },
   {path: 'login', component: LoginComponent},
